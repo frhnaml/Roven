@@ -23,3 +23,9 @@ Roven is designed to provide a luxurious and user-friendly shopping experience, 
 Contribution:
 
 This project is open for collaboration! Feel free to fork, star, and contribute to Roven to enhance its features and improve the user experience.
+
+
+```
+cd frontend
+npm i
+```
