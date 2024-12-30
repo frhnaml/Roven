@@ -1,17 +1,39 @@
+import { useState, useEffect } from "react";
 import { Button, Container, Flex, HStack, Image, Text } from "@chakra-ui/react";
-import logo from "../../assets/Logo Roven.png";
 import { Link } from "react-router-dom";
 import { RiAccountCircle2Line } from "react-icons/ri";
 import { IoMdSearch } from "react-icons/io";
 import { IoBagOutline } from "react-icons/io5";
+import logo from "../../assets/Logo Roven.png";
 
 function Navbar() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <Container>
+    <Container
+      maxW="100%"
+      position="fixed"
+      top="0"
+      zIndex="1000"
+      backgroundColor={isScrolled ? "white" : "transparent"}
+      transition="background-color 0.3s ease"
+      boxShadow={isScrolled ? "md" : "none"}
+    >
       <Flex
         h={16}
         alignItems={"center"}
-        justifyContent={"space-between"} // Aligns the content to space between
+        justifyContent={"space-between"}
         flexDir={{
           base: "column",
           sm: "row",
@@ -19,12 +41,11 @@ function Navbar() {
       >
         <Link to={"/"}>
           <Image
-            src={logo} // Update the path to your logo image
+            src={logo}
             alt="Logo"
             py={5}
-            boxSize={{ base: "100px", sm: "120px" }} // Adjust the size of your logo
-            objectFit="contain" // Makes sure the logo scales properly
-            backgroundColor="transparent" // Ensures no background behind the logo
+            boxSize={{ base: "100px", sm: "120px" }}
+            objectFit="contain"
           />
         </Link>
 
@@ -43,13 +64,12 @@ function Navbar() {
           </Text>
         </HStack>
 
-        {/* Icons on the right */}
-        <HStack spacing={6} alignItems={"center"} ml="auto"> {/* Added ml="auto" */}
+        <HStack spacing={6} alignItems={"center"} ml="auto">
           <Link to={"/login"}>
             <Button
               backgroundColor="transparent"
               _hover={{ backgroundColor: "transparent" }}
-              color="black" // Set the icon color
+              color="black"
             >
               <RiAccountCircle2Line />
             </Button>
@@ -59,7 +79,7 @@ function Navbar() {
             <Button
               backgroundColor="transparent"
               _hover={{ backgroundColor: "transparent" }}
-              color="black" // Set the icon color
+              color="black"
             >
               <IoMdSearch />
             </Button>
@@ -69,7 +89,7 @@ function Navbar() {
             <Button
               backgroundColor="transparent"
               _hover={{ backgroundColor: "transparent" }}
-              color="black" // Set the icon color
+              color="black"
             >
               <IoBagOutline />
             </Button>
