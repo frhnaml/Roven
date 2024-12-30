@@ -1,34 +1,22 @@
-import { Button } from '@/components/ui/button'
-import { Container, VStack } from '@chakra-ui/react'
+import { Box, Image } from "@chakra-ui/react";
+import Background from "../assets/BG HOME MENU.png";
 
 function Home() {
   return (
-    <Container maxW="container.xl" py={12}>
-      <VStack align="center" spacing={4}>
-      <Button>
-        Mewing
-      </Button>
-      <Button>
-        Mewing
-      </Button>
-      <Button>
-        Mewing
-      </Button>
-      <Button>
-        Mewing
-      </Button>
-      <Button>
-        Mewing
-      </Button>
-      <Button>
-        Mewing
-      </Button>
-      <Button>
-        Mewing
-      </Button>
-      </VStack>
-    </Container>
-  )
+    <Box position="relative" h="100vh" w="100vw" overflow="hidden">
+      <Image
+        src={Background}
+        alt="Background"
+        objectFit="cover"
+        w="100%"
+        h="100%"
+        position="absolute"
+        top="0"
+        left="0"
+        zIndex="-1"
+      />
+    </Box>
+  );
 }
 
-export default Home
+export default Home;
