@@ -1,28 +1,22 @@
-import { Box } from '@chakra-ui/react';
-import Navbar from './components/main/Navbar';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './pages/Home';
-import Account from './pages/Account';
-import Wishlist from './pages/Wishlist';
-import Items from './pages/Items';
-import { useColorModeValue } from './components/ui/color-mode';
-import BestSeller from './pages/BestSeller';
+
+import { Box, HStack } from "@chakra-ui/react"
+
+import { Button } from "./components/ui/button"
+import Navbar from "./components/main/Navbar"
+import { Route, Routes } from "react-router-dom"
+import Home from "./pages/Home"
 
 function App() {
   return (
-    <Router>
-      <Box minH="100vh" bg={useColorModeValue("gray.100", "gray.900")}>
+    <>
+      <Box>
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/account" element={<Account />} />
-          <Route path="/wishlist" element={<Wishlist />} />
-          <Route path="/items" element={<Items />} />
-          <Route path="/bestseller" element={<BestSeller />} />
         </Routes>
       </Box>
-    </Router>
-  );
+    </>
+  )
 }
 
-export default App;
+export default App
