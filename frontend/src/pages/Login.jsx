@@ -11,7 +11,10 @@ function Login() {
 
   const navigate = useNavigate();
 
-  const onSubmit = handleSubmit((data) => console.log(data));
+  const onSubmit = handleSubmit((data) => {
+    console.log(data);
+    navigate("/account"); // Navigate to Account page on successful login
+  });
 
   return (
     <form
