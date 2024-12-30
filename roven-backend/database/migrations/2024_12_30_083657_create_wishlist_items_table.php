@@ -9,10 +9,17 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('wishlists', function (Blueprint $table) {
-            $table->id();
+            $table->id('wishlist_id');
+            $table->foreignId('user_id')
+                ->constrained('users', 'user_id')
+                ->cascadeOnDelete();
+            $table->foreignId('product_id')
+                ->constrained('products', 'product_id')
+                ->cascadeOnDelete();
+            $table->timestamp('added_at')->useCurrent();
             $table->timestamps();
         });
     }

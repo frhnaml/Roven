@@ -9,10 +9,16 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('payments', function (Blueprint $table) {
-            $table->id();
+            $table->id('payment_id');
+            $table->foreignId('order_id')
+                ->constrained('orders', 'order_id')
+                ->cascadeOnDelete();
+            $table->timestamp('payment_date')->useCurrent();
+            $table->enum('payment_method', ['credit_card', 'paypal', 'bank_transfer']);
+            $table->decimal('amount', 10, 2);
             $table->timestamps();
         });
     }
