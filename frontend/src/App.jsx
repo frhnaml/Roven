@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <Box>
-        <Navbar />
+        <Navbar zIndex={1} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
