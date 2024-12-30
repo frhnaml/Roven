@@ -1,23 +1,13 @@
-
-import {
-  Box,
-  Input,
-  Button,
-  Link,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
+import React from "react";
+import { Container, Box, Input, Button, Text, VStack } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
 
-function Login() {
+function Register() {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-
-  const navigate = useNavigate();
 
   const onSubmit = handleSubmit((data) => console.log(data));
 
@@ -33,11 +23,56 @@ function Login() {
     >
       <VStack mt={8} spacing={4} align="center">
         <Text fontSize="2xl" fontWeight="bold" color="black">
-          Login
+          Register
         </Text>
         <Text fontSize="sm" color="gray.600">
-          Please enter your e-mail and password:
+          Please fill in the information below:
         </Text>
+
+        <Box width="100%">
+          <Text
+            mb={1}
+            fontSize="sm"
+            color={errors.firstName ? "red.500" : "gray.600"}
+          >
+            First name
+          </Text>
+          <Input
+            {...register("firstName", { required: "First name is required" })}
+            placeholder="First name"
+            size="md"
+            focusBorderColor="black"
+            borderColor="gray.300"
+            _hover={{ borderColor: "gray.400" }}
+            isInvalid={!!errors.firstName}
+          />
+          <Text mt={1} fontSize="xs" color="red.500">
+            {errors.firstName?.message}
+          </Text>
+        </Box>
+
+        <Box width="100%">
+          <Text
+            mb={1}
+            fontSize="sm"
+            color={errors.lastName ? "red.500" : "gray.600"}
+          >
+            Last name
+          </Text>
+          <Input
+            {...register("lastName", { required: "Last name is required" })}
+            placeholder="Last name"
+            size="md"
+            focusBorderColor="black"
+            borderColor="gray.300"
+            _hover={{ borderColor: "gray.400" }}
+            isInvalid={!!errors.lastName}
+          />
+          <Text mt={1} fontSize="xs" color="red.500">
+            {errors.lastName?.message}
+          </Text>
+        </Box>
+
         <Box width="100%">
           <Text
             mb={1}
@@ -90,21 +125,11 @@ function Login() {
           color="white"
           _hover={{ bg: "gray.800", cursor: "pointer" }}
         >
-          LOGIN
+          CREATE MY ACCOUNT
         </Button>
-        <Text fontSize="sm" color="gray.600">
-          Don’t have an account?{" "}
-          <Link
-            onClick={() => navigate("/register")}
-            _hover={{ textDecoration: "underline", cursor: "pointer" }}
-            color="black"
-          >
-            Create one
-          </Link>
-        </Text>
       </VStack>
     </form>
   );
 }
 
-export default Login;
+export default Register;
