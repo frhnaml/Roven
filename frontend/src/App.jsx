@@ -5,7 +5,6 @@ import Navbar from "./components/main/Navbar"
 import { Route, Routes } from "react-router-dom"
 import Home from "./pages/Home"
 
-
 function App() {
   return (
     <>
@@ -16,7 +15,7 @@ function App() {
         </Routes>
       </Box>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
