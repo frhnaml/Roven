@@ -1,67 +1,45 @@
-import { Button, Container, Flex, HStack, Text } from "@chakra-ui/react";
-import { useColorMode } from "../ui/color-mode";
-import { Link } from "react-router";
-import { FcDataBackup } from "react-icons/fc";
-import { RiAccountPinBoxLine } from "react-icons/ri";
-import { FaRegHeart } from "react-icons/fa";
-import { HiOutlineShoppingBag } from "react-icons/hi";
-import { IoMoon } from "react-icons/io5";
-import { IoSunnyOutline } from "react-icons/io5";
-import { LuShoppingBag } from "react-icons/lu";
+
+import React from "react";
+import { Button } from "../ui/button";
+import { Container, Flex, Image, Text } from "@chakra-ui/react";
+import logo from "../../assets/Logo Roven.png";
+import { Link } from "react-router-dom";
 
 function Navbar() {
-  const { colorMode, toggleColorMode } = useColorMode();
   return (
     <Container>
       <Flex
         h={16}
         alignItems={"center"}
-        justifyContent={"space-between"}
-        flexDir={{ base: "column", md: "row" }}
+        justifyContent={"space-start"}
+        flexDir={{
+          base: "column",
+          sm: "row",
+        }}
       >
-        <Text
-          fontSize={{ base: "22", sm: "28" }}
-          fontWeight={"bold"}
-          textTransform={"uppercase"}
-          textAlign={"center"}
-          bgGradient={"linear(to-r, cyan.400, blue.500, purple.600)"}
-          bgClip={"text"}
-        >
-          <Link to={"/"}>
-            {" "}
-            <FcDataBackup /> RovenShop
-          </Link>
+        <Link to={"/"}>
+          <Image
+            src={logo} // Update the path to your logo image
+            alt="Logo"
+            py={5}
+            boxSize={{ base: "100px", sm: "120px" }} // Adjust the size of your logo
+            objectFit="contain" // Makes sure the logo scales properly
+          />
+        </Link>
+
+        <Text>
+          <Link to={"/home"}>Test</Link>
+        </Text>
+        <Text>
+          <Link to={"/home"}>Test</Link>
+        </Text>
+        <Text>
+          <Link to={"/home"}>Test</Link>
+        </Text>
+        <Text>
+          <Link to={"/home"}>Test</Link>
         </Text>
 
-        <HStack spacing={2} alignItems={"center"}>
-          <Link to={"/account"}>
-            <Button>
-              <RiAccountPinBoxLine fontSize={20} />
-            </Button>
-          </Link>
-
-          <Link to={"/wishlist"}>
-            <Button>
-              <FaRegHeart fontSize={20} />
-            </Button>
-          </Link>
-
-          <Link to={"/items"}>
-            <Button>
-              <HiOutlineShoppingBag fontSize={20} />
-            </Button>
-          </Link>
-
-          <Link to={"/bestseller"}>
-            <Button>
-              <LuShoppingBag />
-            </Button>
-          </Link>
-
-          <Button onClick={toggleColorMode}>
-            {colorMode === "light" ? <IoMoon /> : <IoSunnyOutline />}
-          </Button>
-        </HStack>
       </Flex>
     </Container>
   );
