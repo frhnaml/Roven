@@ -6,6 +6,7 @@ import Account from './pages/Account';
 import Wishlist from './pages/Wishlist';
 import Items from './pages/Items';
 import { useColorModeValue } from './components/ui/color-mode';
+import BestSeller from './pages/BestSeller';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/account" element={<Account />} />
           <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/items" element={<Items />} />
+          <Route path="/bestseller" element={<BestSeller />} />
         </Routes>
       </Box>
     </Router>

@@ -7,6 +7,7 @@ import { FaRegHeart } from "react-icons/fa";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { IoMoon } from "react-icons/io5";
 import { IoSunnyOutline } from "react-icons/io5";
+import { LuShoppingBag } from "react-icons/lu";
 
 function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -48,6 +49,12 @@ function Navbar() {
           <Link to={"/items"}>
             <Button>
               <HiOutlineShoppingBag fontSize={20} />
+            </Button>
+          </Link>
+
+          <Link to={"/bestseller"}>
+            <Button>
+              <LuShoppingBag />
             </Button>
           </Link>
 
