@@ -1,22 +1,24 @@
-import { Button, Container, Flex, HStack, Text } from "@chakra-ui/react";
-import { useColorMode } from "../ui/color-mode";
-import { Link } from "react-router";
-import { FcDataBackup } from "react-icons/fc";
-import { RiAccountPinBoxLine } from "react-icons/ri";
-import { FaRegHeart } from "react-icons/fa";
-import { HiOutlineShoppingBag } from "react-icons/hi";
+
+import { Link } from "react-router-dom";
+import { FaRegPlusSquare } from "react-icons/fa";
 import { IoMoon } from "react-icons/io5";
 import { IoSunnyOutline } from "react-icons/io5";
+import { FaDatabase } from "react-icons/fa6";
+import { useColorMode } from "../ui/color-mode";
+import { Button, Container, Flex, HStack, Text } from "@chakra-ui/react";
 
 function Navbar() {
-  const { colorMode, toggleColorMode } = useColorMode();
+  const { colormode, toggleColorMode } = useColorMode();
   return (
-    <Container>
+    <Container maxW={"1140px"} px={"4"}>
       <Flex
         h={16}
         alignItems={"center"}
         justifyContent={"space-between"}
-        flexDir={{ base: "column", md: "row" }}
+        flexDir={{
+          base: "column",
+          sm: "row",
+        }}
       >
         <Text
           fontSize={{ base: "22", sm: "28" }}
@@ -26,34 +28,25 @@ function Navbar() {
           bgGradient={"linear(to-r, cyan.400, blue.500, purple.600)"}
           bgClip={"text"}
         >
-          <Link to={"/"}>
-            {" "}
-            <FcDataBackup /> RovenShop
-          </Link>
+          <Link to={"/"}>Edging</Link>
         </Text>
 
-        <HStack spacing={2} alignItems={"center"}>
-          <Link to={"/account"}>
+        <HStack spacing={"2"} alignItems={"center"}>
+          <Link to={"/create"}>
             <Button>
-              <RiAccountPinBoxLine fontSize={20} />
+              <FaRegPlusSquare fontSize={"20"} />
             </Button>
           </Link>
-
-          <Link to={"/wishlist"}>
+          <Link to={"/motion"}>
             <Button>
-              <FaRegHeart fontSize={20} />
+              <FaDatabase fontSize={"20"} />
             </Button>
           </Link>
-
-          <Link to={"/items"}>
-            <Button>
-              <HiOutlineShoppingBag fontSize={20} />
+          <Link>
+            <Button onClick={toggleColorMode}>
+              {colormode === "light" ? <IoMoon /> : <IoSunnyOutline />}
             </Button>
           </Link>
-
-          <Button onClick={toggleColorMode}>
-            {colorMode === "light" ? <IoMoon /> : <IoSunnyOutline />}
-          </Button>
         </HStack>
       </Flex>
     </Container>
