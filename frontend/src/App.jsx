@@ -1,6 +1,5 @@
-import { Box } from "@chakra-ui/react"
-import Navbar from "./components/main/Navbar"
-
+import { Box } from "@chakra-ui/react";
+import Navbar from "./components/main/Navbar";
 
 function App() {
   return (
@@ -9,7 +8,7 @@ function App() {
         <Navbar />
       </Box>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
