@@ -44,10 +44,10 @@ function Register() {
             {...register("firstName", { required: "First name is required" })}
             placeholder="First name"
             size="md"
-            focusBorderColor="black"
             borderColor="gray.300"
+            _focus={{ borderColor: "black" }}
             _hover={{ borderColor: "gray.400" }}
-            isInvalid={!!errors.firstName}
+            isInvalid={errors.firstName}
           />
           <Text mt={1} fontSize="xs" color="red.500">
             {errors.firstName?.message}
@@ -66,10 +66,10 @@ function Register() {
             {...register("lastName", { required: "Last name is required" })}
             placeholder="Last name"
             size="md"
-            focusBorderColor="black"
             borderColor="gray.300"
+            _focus={{ borderColor: "black" }}
             _hover={{ borderColor: "gray.400" }}
-            isInvalid={!!errors.lastName}
+            isInvalid={errors.lastName}
           />
           <Text mt={1} fontSize="xs" color="red.500">
             {errors.lastName?.message}
@@ -88,10 +88,10 @@ function Register() {
             {...register("email", { required: "Email is required" })}
             placeholder="Email"
             size="md"
-            focusBorderColor="black"
             borderColor="gray.300"
+            _focus={{ borderColor: "black" }}
             _hover={{ borderColor: "gray.400" }}
-            isInvalid={!!errors.email}
+            isInvalid={errors.email}
           />
           <Text mt={1} fontSize="xs" color="red.500">
             {errors.email?.message}
@@ -111,10 +111,10 @@ function Register() {
             placeholder="Password"
             type="password"
             size="md"
-            focusBorderColor="black"
             borderColor="gray.300"
+            _focus={{ borderColor: "black" }}
             _hover={{ borderColor: "gray.400" }}
-            isInvalid={!!errors.password}
+            isInvalid={errors.password}
           />
           <Text mt={1} fontSize="xs" color="red.500">
             {errors.password?.message}
