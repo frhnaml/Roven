@@ -9,6 +9,8 @@ class Review extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'review_id';
+
     protected $fillable = ['user_id', 'product_id', 'rating', 'comment', 'review_date'];
 
     public function user()
