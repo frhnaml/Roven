@@ -1,12 +1,4 @@
-
-import {
-  Box,
-  Input,
-  Button,
-  Link,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
+import { Box, Input, Button, Link, Text, VStack } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 

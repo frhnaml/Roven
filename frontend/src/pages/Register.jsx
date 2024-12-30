@@ -1,6 +1,7 @@
 import React from "react";
-import { Container, Box, Input, Button, Text, VStack } from "@chakra-ui/react";
+import { Box, Input, Button, Text, VStack, Link } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 function Register() {
   const {
@@ -8,6 +9,8 @@ function Register() {
     handleSubmit,
     formState: { errors },
   } = useForm();
+
+  const navigate = useNavigate();
 
   const onSubmit = handleSubmit((data) => console.log(data));
 
@@ -127,6 +130,16 @@ function Register() {
         >
           CREATE MY ACCOUNT
         </Button>
+        <Text fontSize="sm" color="gray.600">
+          Already have an account?{" "}
+          <Link
+            onClick={() => navigate("/login")}
+            _hover={{ textDecoration: "underline", cursor: "pointer" }}
+            color="black"
+          >
+            Login here
+          </Link>
+        </Text>
       </VStack>
     </form>
   );
