@@ -51,7 +51,7 @@ function Navbar() {
 
         <HStack spacing={6} alignItems={"center"}>
           <Text>
-            <Link to={"/home"}>Best Sellers</Link>
+            <Link to={"/best-seller"}>Best Sellers</Link>
           </Text>
           <Text>
             <Link to={"/login"}>Login</Link>
