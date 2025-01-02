@@ -4,7 +4,7 @@ import NewBackground from "../assets/PERFUME FEMININ/Perfume 13.jpg";
 import AnotherImage from "../assets/PERFUME FEMININ/Perfume 2.jpg";
 import Image3 from "../assets/PERFUME FEMININ/Perfume 5.jpg";
 import Image4 from "../assets/PERFUME FEMININ/Perfume 12.jpg";
-import HighlightedProduct from "@/components/HighlightedProduct";
+import HighlightedProduct from "@/components/Home/HighlightedProduct";
 
 
 function Home() {
