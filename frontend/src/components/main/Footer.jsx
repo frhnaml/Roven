@@ -32,6 +32,7 @@ function Footer() {
             alt="Roven Logo"
             boxSize="100px"
             mb={-2}
+            _hover={{ cursor: "pointer" }} // Add cursor pointer on hover
           />
           <Text fontSize="md" fontWeight="medium">
             Roven is a perfume store that brings luxurious and elegant scents.
@@ -80,7 +81,7 @@ function Footer() {
           flex={1}
           spacing={6}
           mt={4}
-          ml={10} // Geser FOLLOW US lebih ke kanan tanpa memengaruhi SHOP BY DEPARTMENT
+          ml={10} // Move FOLLOW US more to the right without affecting SHOP BY DEPARTMENT
         >
           <Text fontWeight="bold">FOLLOW US</Text>
           <VStack align="start" spacing={1}>

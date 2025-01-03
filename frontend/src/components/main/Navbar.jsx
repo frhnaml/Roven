@@ -53,7 +53,7 @@ function Navbar() {
           <Text fontWeight="bold">
             {" "}
             {/* Added bold font style */}
-            <Link to={"/home"}>Home</Link>
+            <Link to={"/"}>Home</Link>
           </Text>
           <Text fontWeight="bold">
             {" "}
