@@ -1,11 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { Box, Text, HStack, Image } from '@chakra-ui/react';
-
-const reviews = [
-  "Konsep parfum Mine. dibuat simple dan playful. Dengan inovasi koleksi khusus layering ini, kami berharap agar pemakai menemukan wangi unik yang sesuai dengan gaya dan dapat merefleksikan identitasnya dengan mudah dan menyenangkan",
-  "Review B: Customizable perfume with playful and elegant designs, allowing users to express themselves uniquely and easily.",
-  "Review C: An innovative fragrance layering collection for a unique, stylish, and enjoyable scent experience."
-];
+import { useState, useEffect } from 'react';
+import { Box, Text, HStack, Image, Spinner } from '@chakra-ui/react';
+import { useStore } from '../../Store/Review'; 
 
 const logos = [
   { src: '/path/to/fimela-logo.png', alt: 'Fimela Logo' },
@@ -16,21 +11,39 @@ const logos = [
 ];
 
 const ReviewShowcase = () => {
+  const { reviews, isLoading, error, fetchReviews } = useStore();
   const [currentReviewIndex, setCurrentReviewIndex] = useState(0);
 
   useEffect(() => {
+    fetchReviews(); // Fetch reviews on component mount
+
     const interval = setInterval(() => {
       setCurrentReviewIndex((prevIndex) => (prevIndex + 1) % reviews.length);
     }, 7000); // 7 seconds interval
 
     return () => clearInterval(interval);
-  }, []);
+  }, [fetchReviews, reviews.length]);
+
+  if (isLoading) {
+    return <Spinner size="xl" />;
+  }
+
+  if (error) {
+    return <Text color="red.500">Error: {error}</Text>;
+  }
 
   return (
     <Box textAlign="center" py={10} px={5}>
-      <Text fontSize="xl" fontStyle="italic" mb={10}>
-        {`'${reviews[currentReviewIndex]}'`}
-      </Text>
+      {reviews.length > 0 && (
+        <>
+          <Text fontSize="xl" fontStyle="italic" mb={2}>
+            {`'${reviews[currentReviewIndex].comment}'`} {/* Display only the comment */}
+          </Text>
+          <Text fontSize="md" color="gray.500">
+            {`User ID: ${reviews[currentReviewIndex].user_id}`} {/* Display the user_id */}
+          </Text>
+        </>
+      )}
 
       <HStack justify="center" spacing={8} mt={10}>
         {logos.map((logo, index) => (
