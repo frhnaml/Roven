@@ -19,7 +19,7 @@ import {
 
 function Footer() {
   return (
-    <Box bg={"black"} color={"white"} py={10} px={6} mt={35}>
+    <Box bg={"black"} color={"white"} py={10} px={6} mt={200}>
       <Flex
         justify={"space-between"}
         direction={["column", "column", "row"]}
