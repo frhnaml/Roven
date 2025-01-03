@@ -40,7 +40,7 @@ const ReviewShowcase = () => {
             {`'${reviews[currentReviewIndex].comment}'`} {/* Display only the comment */}
           </Text>
           <Text fontSize="md" color="gray.500">
-            {`User ID: ${reviews[currentReviewIndex].user_id}`} {/* Display the user_id */}
+             {reviews[currentReviewIndex].user.name} {/* Display the user_id */}
           </Text>
         </>
       )}
