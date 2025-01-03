@@ -27,8 +27,8 @@ function Navbar() {
       top="0"
       zIndex="1000"
       backgroundColor={isScrolled ? "white" : "transparent"}
-      transition="background-color 0.3s ease"
-      boxShadow={isScrolled ? "md" : "none"}
+      transition="background-color 1s ease, box-shadow 1s ease"
+      boxShadow={isScrolled ? "0px 5px 20px rgba(0, 0, 0, 0.4)" : "none"}
     >
       <Flex
         h={16}
@@ -44,23 +44,31 @@ function Navbar() {
             src={logo}
             alt="Logo"
             py={5}
-            boxSize={{ base: "100px", sm: "120px" }}
+            boxSize={{ base: "95px", sm: "95px" }}
             objectFit="contain"
           />
         </Link>
 
-        <HStack spacing={6} alignItems={"center"}>
-          <Text>
-            <Link to={"/best-seller"}>Best Sellers</Link>
+        <HStack spacing={12} alignItems={"center"} gapX={10}>
+          <Text fontWeight="bold">
+            {" "}
+            {/* Added bold font style */}
+            <Link to={"/"}>Home</Link>
           </Text>
-          <Text>
-            <Link to={"/login"}>Login</Link>
+          <Text fontWeight="bold">
+            {" "}
+            {/* Added bold font style */}
+            <Link to={"/login"}>Product</Link>
           </Text>
-          <Text>
-            <Link to={"/home"}>Test</Link>
+          <Text fontWeight="bold">
+            {" "}
+            {/* Added bold font style */}
+            <Link to={"/best-seller"}>Best Seller</Link>
           </Text>
-          <Text>
-            <Link to={"/home"}>Test</Link>
+          <Text fontWeight="bold">
+            {" "}
+            {/* Added bold font style */}
+            <Link to={"/home"}>About Us</Link>
           </Text>
         </HStack>
 
