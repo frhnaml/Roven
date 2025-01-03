@@ -1,12 +1,4 @@
-
-import {
-  Box,
-  Input,
-  Button,
-  Link,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
+import { Box, Input, Button, Link, Text, VStack } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
@@ -19,7 +11,10 @@ function Login() {
 
   const navigate = useNavigate();
 
-  const onSubmit = handleSubmit((data) => console.log(data));
+  const onSubmit = handleSubmit((data) => {
+    console.log(data);
+    navigate("/account"); // Navigate to Account page on successful login
+  });
 
   return (
     <form
@@ -50,10 +45,10 @@ function Login() {
             {...register("email", { required: "Email is required" })}
             placeholder="Email"
             size="md"
-            focusBorderColor="black"
             borderColor="gray.300"
+            _focus={{ borderColor: "black" }}
             _hover={{ borderColor: "gray.400" }}
-            isInvalid={!!errors.email}
+            isInvalid={errors.email}
           />
           <Text mt={1} fontSize="xs" color="red.500">
             {errors.email?.message}
@@ -73,10 +68,10 @@ function Login() {
             placeholder="Password"
             type="password"
             size="md"
-            focusBorderColor="black"
             borderColor="gray.300"
+            _focus={{ borderColor: "black" }}
             _hover={{ borderColor: "gray.400" }}
-            isInvalid={!!errors.password}
+            isInvalid={errors.password}
           />
           <Text mt={1} fontSize="xs" color="red.500">
             {errors.password?.message}
