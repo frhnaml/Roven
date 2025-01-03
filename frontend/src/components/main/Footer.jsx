@@ -6,6 +6,7 @@ import {
   Text,
   VStack,
   Image,
+  Toaster,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
@@ -68,11 +69,36 @@ function Footer() {
         <VStack align="start" flex={1} spacing={6} mt={4} ml={20}>
           <Text fontWeight="bold">SHOP BY DEPARTMENT</Text>
           <VStack align="start" spacing={1}>
-            <Text textAlign="left">Perfumes</Text>
-            <Text textAlign="left">Women's Perfume</Text>
-            <Text textAlign="left">Men's Cologne</Text>
-            <Text textAlign="left">Best Sellers</Text>
-            <Text textAlign="left">New Arrivals</Text>
+            <Text
+              textAlign="left"
+              _hover={{ cursor: "pointer", color: "#FF69B4" }} // Change color to #FF69B4 on hover
+            >
+              Perfumes
+            </Text>
+            <Text
+              textAlign="left"
+              _hover={{ cursor: "pointer", color: "#FF69B4" }} // Change color to #FF69B4 on hover
+            >
+              Women's Perfume
+            </Text>
+            <Text
+              textAlign="left"
+              _hover={{ cursor: "pointer", color: "#FF69B4" }} // Change color to #FF69B4 on hover
+            >
+              Men's Cologne
+            </Text>
+            <Text
+              textAlign="left"
+              _hover={{ cursor: "pointer", color: "#FF69B4" }} // Change color to #FF69B4 on hover
+            >
+              Best Sellers
+            </Text>
+            <Text
+              textAlign="left"
+              _hover={{ cursor: "pointer", color: "#FF69B4" }} // Change color to #FF69B4 on hover
+            >
+              New Arrivals
+            </Text>
           </VStack>
         </VStack>
 
@@ -85,16 +111,28 @@ function Footer() {
         >
           <Text fontWeight="bold">FOLLOW US</Text>
           <VStack align="start" spacing={1}>
-            <Link href="#" color="blue.400">
+            <Link
+              href="#"
+              _hover={{ cursor: "pointer", color: "#FF69B4" }} // Change color to #FF69B4 on hover
+            >
               Instagram
             </Link>
-            <Link href="#" color="blue.400">
+            <Link
+              href="#"
+              _hover={{ cursor: "pointer", color: "#FF69B4" }} // Change color to #FF69B4 on hover
+            >
               Facebook
             </Link>
-            <Link href="#" color="blue.400">
+            <Link
+              href="#"
+              _hover={{ cursor: "pointer", color: "#FF69B4" }} // Change color to #FF69B4 on hover
+            >
               LinkedIn
             </Link>
-            <Link href="#" color="blue.400">
+            <Link
+              href="#"
+              _hover={{ cursor: "pointer", color: "#FF69B4" }} // Change color to #FF69B4 on hover
+            >
               Tiktok
             </Link>
           </VStack>
@@ -105,7 +143,13 @@ function Footer() {
           <VStack spacing={2} align="start" w="full">
             <Input placeholder="First Name" bg="white" color="black" />
             <Input placeholder="Email" bg="white" color="black" />
-            <Button colorScheme="whiteAlpha" bg="white" color="black" w="full">
+            <Button
+              colorScheme="whiteAlpha"
+              bg="white"
+              color="black"
+              w="full"
+              _hover={{ bg: "#FF69B4", color: "white" }} // Menambahkan perubahan warna saat hover
+            >
               Subscribe
             </Button>
           </VStack>
