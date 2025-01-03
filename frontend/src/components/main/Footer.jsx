@@ -53,8 +53,8 @@ function Footer() {
                 _hover={{
                   transform: "scale(1.2)",
                   filter:
-                    "drop-shadow(0 0 1px #8B008B) drop-shadow(0 0 1px #C71585)",
-                  color: "#C71585",
+                    "drop-shadow(0 0 1px #FF69B4) drop-shadow(0 0 1px #DB7093)",
+                  color: "#FF69B4",
                 }}
                 transition="transform 0.2s, filter 0.2s, color 0.2s"
               >
