@@ -1,11 +1,13 @@
-import { Box, Image } from "@chakra-ui/react";
+import { Box, Image, Divider } from "@chakra-ui/react";
 import Background from "../assets/BG HOME MENU.png";
 import NewBackground from "../assets/PERFUME FEMININ/Perfume 13.jpg";
 import AnotherImage from "../assets/PERFUME FEMININ/Perfume 2.jpg";
 import Image3 from "../assets/PERFUME FEMININ/Perfume 5.jpg";
 import Image4 from "../assets/PERFUME FEMININ/Perfume 12.jpg";
 import HighlightedProduct from "@/components/Home/HighlightedProduct";
-
+import HomeCategories from "@/components/Home/HomeCatgories";
+import HomeCarousel from "@/components/Home/HomeCarousel";
+import ReviewShowcase from "@/components/Home/ReviewShowcase";
 
 function Home() {
   const variants = {
@@ -48,6 +50,14 @@ function Home() {
           variants={variants}
         />
       ))}
+
+      <HomeCategories />
+
+      <HomeCarousel />
+
+      <Divider borderColor="black" my={6} />
+
+      <ReviewShowcase />
     </Box>
   );
 }
