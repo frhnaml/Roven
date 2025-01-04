@@ -8,6 +8,7 @@ import logo from "../../assets/Logo Roven.png";
 
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,9 +27,11 @@ function Navbar() {
       position="fixed"
       top="0"
       zIndex="1000"
-      backgroundColor={isScrolled ? "white" : "transparent"}
+      backgroundColor={isScrolled || isHovered ? "white" : "transparent"}
       transition="background-color 1s ease, box-shadow 1s ease"
       boxShadow={isScrolled ? "0px 5px 20px rgba(0, 0, 0, 0.4)" : "none"}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
       <Flex
         h={16}
