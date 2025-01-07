@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   Box,
   Flex,
@@ -9,7 +9,7 @@ import {
   Input,
   Button, // We are using Button instead of IconButton
 } from "@chakra-ui/react";
-import { FaFacebook, FaInstagram, FaTwitter, FaMinus, FaPlus } from "react-icons/fa";
+import { FaInstagram, FaTwitter, FaMinus, FaPlus } from "react-icons/fa";
 import PerfumeBanner from "../../assets/PERFUME FEMININ/Perfume 20.jpg"; // Default image
 import PerfumeImage1 from "../../assets/PERFUME FEMININ/Perfume 8.jpg";
 import PerfumeImage2 from "../../assets/PERFUME FEMININ/Perfume 14.jpg";
