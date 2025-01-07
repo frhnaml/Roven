@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button, Container, Flex, HStack, Image, Text } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { RiAccountCircle2Line } from "react-icons/ri";
 import { IoMdSearch } from "react-icons/io";
 import { IoBagOutline } from "react-icons/io5";
@@ -8,6 +8,7 @@ import logo from "../../assets/Logo Roven.png";
 
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,6 +21,13 @@ function Navbar() {
     };
   }, []);
 
+  const handleNavigation = (path) => {
+    navigate(path);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const textColor = isScrolled ? "black" : "white";
+
   return (
     <Container
       maxW="100%"
@@ -27,7 +35,7 @@ function Navbar() {
       top="0"
       zIndex="1000"
       backgroundColor={isScrolled ? "white" : "transparent"}
-      transition="background-color 1s ease, box-shadow 1s ease"
+      transition="background-color 0.5s ease, box-shadow 0.5s ease"
       boxShadow={isScrolled ? "0px 5px 20px rgba(0, 0, 0, 0.4)" : "none"}
     >
       <Flex
@@ -39,69 +47,78 @@ function Navbar() {
           sm: "row",
         }}
       >
-        <Link to={"/"}>
-          <Image
-            src={logo}
-            alt="Logo"
-            py={5}
-            boxSize={{ base: "95px", sm: "95px" }}
-            objectFit="contain"
-          />
-        </Link>
+        <Image
+          src={logo}
+          alt="Logo"
+          py={5}
+          boxSize={{ base: "95px", sm: "95px" }}
+          objectFit="contain"
+          _hover={{ cursor: "pointer" }}
+          onClick={() => handleNavigation("/")}
+        />
 
         <HStack spacing={12} alignItems={"center"} gapX={10}>
-          <Text fontWeight="bold">
-            {" "}
-            {/* Added bold font style */}
-            <Link to={"/"}>Home</Link>
+          <Text
+            fontWeight="bold"
+            color={textColor}
+            onClick={() => handleNavigation("/")}
+            _hover={{ cursor: "pointer" }}
+          >
+            Home
           </Text>
-          <Text fontWeight="bold">
-            {" "}
-            {/* Added bold font style */}
-            <Link to={"/login"}>Product</Link>
+          <Text
+            fontWeight="bold"
+            color={textColor}
+            onClick={() => handleNavigation("/login")}
+            _hover={{ cursor: "pointer" }}
+          >
+            Product
           </Text>
-          <Text fontWeight="bold">
-            {" "}
-            {/* Added bold font style */}
-            <Link to={"/best-seller"}>Best Seller</Link>
+          <Text
+            fontWeight="bold"
+            color={textColor}
+            onClick={() => handleNavigation("/best-seller")}
+            _hover={{ cursor: "pointer" }}
+          >
+            Best Seller
           </Text>
-          <Text fontWeight="bold">
-            {" "}
-            {/* Added bold font style */}
-            <Link to={"/home"}>About Us</Link>
+          <Text
+            fontWeight="bold"
+            color={textColor}
+            onClick={() => handleNavigation("/about-us")}
+            _hover={{ cursor: "pointer" }}
+          >
+            About Us
           </Text>
         </HStack>
 
         <HStack spacing={6} alignItems={"center"} ml="auto">
-          <Link to={"/login"}>
-            <Button
-              backgroundColor="transparent"
-              _hover={{ backgroundColor: "transparent" }}
-              color="black"
-            >
-              <RiAccountCircle2Line />
-            </Button>
-          </Link>
+          <Button
+            backgroundColor="transparent"
+            _hover={{ backgroundColor: "transparent" }}
+            color={textColor}
+            onClick={() => handleNavigation("/login")}
+          >
+            <RiAccountCircle2Line />
+          </Button>
 
-          <Link to={"/login"}>
-            <Button
-              backgroundColor="transparent"
-              _hover={{ backgroundColor: "transparent" }}
-              color="black"
-            >
-              <IoMdSearch />
-            </Button>
-          </Link>
+          <Button
+            backgroundColor="transparent"
+            _hover={{ backgroundColor: "transparent" }}
+            color={textColor}
+            onClick={() => handleNavigation("/login")}
+          >
+            <IoMdSearch />
+          </Button>
 
-          <Link to={"/login"}>
-            <Button
-              backgroundColor="transparent"
-              _hover={{ backgroundColor: "transparent" }}
-              color="black"
-            >
-              <IoBagOutline />
-            </Button>
-          </Link>
+          <Button
+            backgroundColor="transparent"
+            _hover={{ backgroundColor: "transparent" }}
+            color={textColor}
+            onClick={() => handleNavigation("/login")}
+          >
+            <IoBagOutline />
+          </Button>
         </HStack>
       </Flex>
     </Container>

@@ -28,13 +28,18 @@ function Footer() {
         gap={6}
       >
         <VStack align={"start"} spacing={1} flex={1}>
-          <Image
-            src="src/assets/Logo Roven.png"
-            alt="Roven Logo"
-            boxSize="100px"
-            mb={-2}
-            _hover={{ cursor: "pointer" }} // Add cursor pointer on hover
-          />
+          <Link
+            to="/"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          >
+            <Image
+              src="src/assets/Logo Roven.png"
+              alt="Roven Logo"
+              boxSize="100px"
+              mb={-2}
+              _hover={{ cursor: "pointer" }} // Add cursor pointer on hover
+            />
+          </Link>
           <Text fontSize="md" fontWeight="medium">
             Roven is a perfume store that brings luxurious and elegant scents.
             Discover your character in every drop, as each of our fragrances is
