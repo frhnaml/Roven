@@ -18,4 +18,57 @@ export const useStore = create((set) => ({
       set({ error: error.message, isLoading: false });
     }
   },
+
+  addReview: async (review) => {
+    try {
+      const response = await fetch('http://127.0.0.1:8000/api/reviews', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(review),
+      });
+      if (response.ok) {
+        // Review added successfully
+      } else {
+        throw new Error('Failed to add review');
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  },
+
+  updateReview: async (reviewId, updatedReview) => {
+    try {
+      const response = await fetch(`http://127.0.0.1:8000/api/reviews/${reviewId}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(updatedReview),
+      });
+      if (response.ok) {
+        // Review updated successfully
+      } else {
+        throw new Error('Failed to update review');
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  },
+
+  deleteReview: async (reviewId) => {
+    try {
+      const response = await fetch(`http://127.0.0.1:8000/api/reviews/${reviewId}`, {
+        method: 'DELETE',
+      });
+      if (response.ok) {
+        // Review deleted successfully
+      } else {
+        throw new Error('Failed to delete review');
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  },
 }));
