@@ -26,8 +26,8 @@ function App() {
           <Route path="/perfume-list" element={<ProductList />} />
           <Route path="/perfume-detail" element={<PerfumeDetails />} />
         </Routes>
+        <Footer />
       </Box>
-      <Footer />
     </>
   );
 }

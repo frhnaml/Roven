@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button, Container, Flex, HStack, Image, Text } from "@chakra-ui/react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { RiAccountCircle2Line } from "react-icons/ri";
 import { IoMdSearch } from "react-icons/io";
 import { IoBagOutline } from "react-icons/io5";
@@ -27,7 +27,7 @@ function Navbar() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const textColor = isScrolled ? "black" : "white";
+  const textColor = isScrolled || isHovered ? "black" : "white";
 
   return (
     <Container
@@ -35,8 +35,6 @@ function Navbar() {
       position="fixed"
       top="0"
       zIndex="1000"
-      backgroundColor={isScrolled ? "white" : "transparent"}
-      transition="background-color 0.5s ease, box-shadow 0.5s ease"
       backgroundColor={isScrolled || isHovered ? "white" : "transparent"}
       transition="background-color 1s ease, box-shadow 1s ease"
       boxShadow={isScrolled ? "0px 5px 20px rgba(0, 0, 0, 0.4)" : "none"}
