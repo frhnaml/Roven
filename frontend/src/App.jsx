@@ -7,6 +7,7 @@ import Footer from "./components/main/Footer";
 import Register from "./pages/Register";
 import Account from "./pages/Account";
 import BestSeller from "./pages/BestSeller";
+import AboutUs from "./pages/AboutUs";
 import ProductList from "./pages/ProductList";
 import PerfumeDetails from "./pages/PerfumeDetails";
 
@@ -21,6 +22,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/account" element={<Account />} />
           <Route path="/best-seller" element={<BestSeller />} />
+          <Route path="/about-us" element={<AboutUs />} />
           <Route path="/perfume-list" element={<ProductList />} />
           <Route path="/perfume-detail" element={<PerfumeDetails />} />
         </Routes>
