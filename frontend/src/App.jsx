@@ -8,6 +8,7 @@ import Register from "./pages/Register";
 import Account from "./pages/Account";
 import BestSeller from "./pages/BestSeller";
 import ProductList from "./pages/ProductList";
+import PerfumeDetails from "./pages/PerfumeDetails";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/account" element={<Account />} />
           <Route path="/best-seller" element={<BestSeller />} />
           <Route path="/perfume-list" element={<ProductList />} />
+          <Route path="/perfume-detail" element={<PerfumeDetails />} />
         </Routes>
       </Box>
       <Footer />

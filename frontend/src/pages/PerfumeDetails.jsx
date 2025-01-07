@@ -1,8 +1,13 @@
-import React from 'react'
+import PerfumeOverview from "@/components/ProductDetails/PerfumeOverview"
+import { Box } from "@chakra-ui/react"
+
 
 function PerfumeDetails() {
   return (
-    <div>PerfumeDetails</div>
+    <Box pt={{ base: "4rem", md: "6rem" }} px={4}>
+      <PerfumeOverview />
+
+    </Box>
   )
 }
 
