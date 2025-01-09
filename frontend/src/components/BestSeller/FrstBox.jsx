@@ -9,9 +9,11 @@ function FrstBox() {
             bgSize="cover"  
             bgPosition="center"  
             minHeight="100vh" 
-            color="white"  
+            
+            color="white" 
             display="flex"  
             flexDirection="column"  
+            
         >  
             <Container textAlign="center" flex={1} display="flex" alignItems="center" justifyContent="center">  
                 <Flex direction="column" align="center">  

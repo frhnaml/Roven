@@ -7,7 +7,7 @@ function StickyBox() {
             position="sticky"
             top="60px" // Adjusted top to prevent overlap with navbar
             bg="white" // Background color is white
-            p={8} // Padding
+            p={6} // Padding
             border="1px solid" // Border with 1px thickness
             borderColor="gray.300" // Border color is gray
             zIndex="1000" // Ensuring the sticky box stays on top

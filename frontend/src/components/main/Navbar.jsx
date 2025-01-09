@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { RiAccountCircle2Line } from "react-icons/ri";
 import { IoMdSearch } from "react-icons/io";
 import { IoBagOutline } from "react-icons/io5";
+import { MdFavorite } from 'react-icons/md';
 import logo from "../../assets/Logo Roven.png";
 
 function Navbar() {
@@ -85,6 +86,11 @@ function Navbar() {
           >
             Best Seller
           </Text>
+
+
+
+
+
           <Text
             fontWeight="bold"
             color={textColor}
@@ -96,6 +102,17 @@ function Navbar() {
         </HStack>
 
         <HStack spacing={6} alignItems={"center"} ml="auto">
+
+          <Button
+            backgroundColor="transparent"
+            _hover={{ backgroundColor: "transparent" }}
+            color={textColor}
+            onClick={() => handleNavigation("/wish-list")}
+
+          >
+            <MdFavorite />
+          </Button>
+
           <Button
             backgroundColor="transparent"
             _hover={{ backgroundColor: "transparent" }}
